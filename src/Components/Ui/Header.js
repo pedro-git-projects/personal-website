@@ -75,6 +75,13 @@ function ElevationScroll(props) {
      "&:hover":{
        backgroundColor:"transparent"
      }     
+   },
+   drawer:{
+     backgroundColor: theme.palette.common.primary.colorOne
+   },
+   drawerItem:{
+     ...theme.typography.tab,
+     color: "white"
    }
   })) 
 
@@ -111,19 +118,26 @@ export default function Header (props) {
 
   const drawer = (
     <React.Fragment>
-      <SwipeableDrawer disableBackdropTransition={!iOS} disableDiscovery={iOS} open={openDrawer} onClose={()=> setOpenDrawer(false)} onOpen={()=>setOpenDrawer(true)}> 
+      <SwipeableDrawer 
+      disableBackdropTransition={!iOS} 
+      disableDiscovery={iOS} 
+      open={openDrawer} 
+      onClose={()=> setOpenDrawer(false)} 
+      onOpen={()=>setOpenDrawer(true)}
+      classes={{paper: classes.drawer}}
+      > 
        <List disablePadding>
          <ListItem onClick={()=> setOpenDrawer(false)} divider button component={Link} to ="/">
-            <ListItemText>Home</ListItemText>
+            <ListItemText className={classes.drawerItem}>Home</ListItemText>
          </ListItem>
          <ListItem onClick={()=> setOpenDrawer(false)} divider button component={Link} to ="/curriculum">
-            <ListItemText>Curriculum</ListItemText>
+            <ListItemText className={classes.drawerItem}>Curriculum</ListItemText>
          </ListItem>
          <ListItem onClick={()=> setOpenDrawer(false)} divider button component={Link} to ="/projects">
-            <ListItemText>Projects</ListItemText>
+            <ListItemText className={classes.drawerItem}>Projects</ListItemText>
          </ListItem>
          <ListItem onClick={()=> setOpenDrawer(false)} divider button component={Link} to ="/contact">
-            <ListItemText>Contact</ListItemText>
+            <ListItemText className={classes.drawerItem}>Contact</ListItemText>
          </ListItem>
        </List>
       </SwipeableDrawer>
