@@ -17,6 +17,11 @@ const theme = createMuiTheme({
         },
         secondary:{
             main:`${colorTwo}`
+        },
+        typography:{
+            h3:{
+                fontWeight: 300
+            }
         }
     }
 })
