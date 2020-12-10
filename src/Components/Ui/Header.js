@@ -25,7 +25,7 @@ function ElevationScroll(props) {
      marginBottom: "3em"
    },
    Logo:{
-     height:"7em"
+     height:"6em"
    } 
   })) 
 
