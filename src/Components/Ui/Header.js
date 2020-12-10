@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/styles';
 import Logo from '../../Assets/logo.svg'
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import {Link} from 'react-router-dom';
 
 
 function ElevationScroll(props) {
@@ -52,10 +53,10 @@ export default function Header (props) {
             <Toolbar disableGutters>
             <img src={Logo} alt="Logo" className={classes.Logo}/>
             <Tabs value={value} onChange={changeHandler} indicatorColor="primary" className={classes.tabContainer}>
-            <Tab className={classes.tab} label="Home" />
-            <Tab className={classes.tab} label="Curriculum" />
-            <Tab className={classes.tab} label="Projects" />
-            <Tab className={classes.tab} label="Contact Me" />
+            <Tab className={classes.tab} component={Link} to="/" label="Home" />
+            <Tab className={classes.tab} component={Link} to="/curriculum" label="Curriculum" />
+            <Tab className={classes.tab} component={Link} to="/projects" label="Projects" />
+            <Tab className={classes.tab} component={Link} to="/contact" label="Contact Me" />
             </Tabs>
             </Toolbar>
         </AppBar>
