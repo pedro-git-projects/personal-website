@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
@@ -7,6 +7,7 @@ import Logo from '../../Assets/logo.svg'
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import {Link} from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 
 function ElevationScroll(props) {
@@ -27,6 +28,11 @@ function ElevationScroll(props) {
      ...theme.mixins.toolbar,
      marginBottom: "3em"
    },
+   logoContainer:{
+    "&:hover":{
+      backgroundColor:"transparent"
+    }
+   },
    Logo:{
      height:"6em"
    },
@@ -46,12 +52,22 @@ export default function Header (props) {
   const changeHandler = (e, value) =>{
     setValue(value)
   }
+  useEffect(()=>{
+    if(window.location.pathname === "/" && value !== 0){
+      setValue(0)
+    } else if (window.location.pathname === "/curriculum" && value !== 1){
+      setValue(1) } else if (window.location.pathname === "/projects" && value !== 2){
+        setValue(2) } else if (window.location.pathname === "/contact" && value !== 3){
+          setValue(3)};
+  },[value])
    return(
        <React.Fragment>
        <ElevationScroll>
         <AppBar position="fixed">
             <Toolbar disableGutters>
-            <img src={Logo} alt="Logo" className={classes.Logo}/>
+            <Button component={Link} to="/" onClick={()=> setValue(0)} disableRipple className={classes.logoContainer}>
+              <img src={Logo} alt="Logo" className={classes.Logo}/>
+            </Button>
             <Tabs value={value} onChange={changeHandler} indicatorColor="primary" className={classes.tabContainer}>
             <Tab className={classes.tab} component={Link} to="/" label="Home" />
             <Tab className={classes.tab} component={Link} to="/curriculum" label="Curriculum" />
