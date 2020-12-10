@@ -33,12 +33,12 @@ function ElevationScroll(props) {
 const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
-    marginBottom: "2.3em",
+    marginBottom: "3em",
     [theme.breakpoints.down("md")]: {
-      marginBottom: "1.5em",
+      marginBottom: "2em",
     },
     [theme.breakpoints.down("xs")]: {
-      marginBottom: "0.7em",
+      marginBottom: "1em",
     },
   },
   logoContainer: {
@@ -84,6 +84,7 @@ const useStyles = makeStyles((theme) => ({
   appbar:{
       zIndex: theme.zIndex.modal + 1
   },
+
 }));
 
 export default function Header(props) {
@@ -143,6 +144,7 @@ export default function Header(props) {
   const drawer = (
     <React.Fragment>
       <SwipeableDrawer
+        anchor="bottom"
         disableBackdropTransition={!iOS}
         disableDiscovery={iOS}
         open={openDrawer}
@@ -150,7 +152,7 @@ export default function Header(props) {
         onOpen={() => setOpenDrawer(true)}
         classes={{ paper: classes.drawer }}
       >
-        <div className={classes.toolbarMargin} />
+        
         <List disablePadding>
           <ListItem
             onClick={() => {
