@@ -2,7 +2,7 @@ import {createMuiTheme} from '@material-ui/core/styles';
 
 
 const colorOne ="#695E93";
-const colorTwo = "#00FF00";
+const colorTwo ="#B4FEE7";
 
 const theme = createMuiTheme({
     palette:{
@@ -19,8 +19,8 @@ const theme = createMuiTheme({
             main:`${colorTwo}`
         },
         typography:{
-            h3:{
-                fontWeight: 300
+            tab:{
+                fontSize: "1rem",
             }
         }
     }
