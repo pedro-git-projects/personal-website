@@ -13,6 +13,9 @@ import {useTheme} from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 
 
 
@@ -109,7 +112,20 @@ export default function Header (props) {
   const drawer = (
     <React.Fragment>
       <SwipeableDrawer disableBackdropTransition={!iOS} disableDiscovery={iOS} open={openDrawer} onClose={()=> setOpenDrawer(false)} onOpen={()=>setOpenDrawer(true)}> 
-      Example Drawer
+       <List disablePadding>
+         <ListItem onClick={()=> setOpenDrawer(false)} divider button component={Link} to ="/">
+            <ListItemText>Home</ListItemText>
+         </ListItem>
+         <ListItem onClick={()=> setOpenDrawer(false)} divider button component={Link} to ="/curriculum">
+            <ListItemText>Curriculum</ListItemText>
+         </ListItem>
+         <ListItem onClick={()=> setOpenDrawer(false)} divider button component={Link} to ="/projects">
+            <ListItemText>Projects</ListItemText>
+         </ListItem>
+         <ListItem onClick={()=> setOpenDrawer(false)} divider button component={Link} to ="/contact">
+            <ListItemText>Contact</ListItemText>
+         </ListItem>
+       </List>
       </SwipeableDrawer>
       <IconButton className={classes.drawerIconContainer} onClick={()=> setOpenDrawer(!openDrawer)} disableRipple>
         <MenuIcon className={classes.drawerIcon}/>
