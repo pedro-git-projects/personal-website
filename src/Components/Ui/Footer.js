@@ -2,6 +2,9 @@ import React from "react";
 import {Link} from 'react-router-dom';
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
+import GitHubIcon from '@material-ui/icons/GitHub';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -18,6 +21,12 @@ const useStyles = makeStyles((theme) => ({
   gridItem:{
     margin:"3em"
   },
+  socialMediaIcon:{
+    height:"3em",
+    width:"3em",
+    color: "white"
+  }
+  
 }));
 
 export default function Footer() {
@@ -42,7 +51,24 @@ export default function Footer() {
             </Grid>
           </Grid>
         </Grid>
-      </Grid>      
+      </Grid>
+
+      <Grid container justify="center" className={classes.socialContainer}>
+        <Grid item>
+          <a href="https://github.com/pedro-git-projects" rel="noopener noreferrer" target="_blank">
+          <IconButton aria-label="Github">
+            <GitHubIcon className={classes.socialMediaIcon}  />
+          </IconButton>
+          </a>
+        </Grid>
+        <Grid item>
+          <a href="https://www.youtube.com/channel/UCTDv5Dkuxd2F9FZnhpObEFg" rel="noopener noreferrer" target="_blank">
+        <IconButton aria-label="Github">
+            <YouTubeIcon className={classes.socialMediaIcon} />
+          </IconButton > 
+          </a>
+        </Grid>
+        </Grid>      
     </footer>
   );
 }

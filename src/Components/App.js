@@ -3,7 +3,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import theme from "./Ui/Theme";
 import Header from "./Ui/Header";
-import Footer from './Ui/Footer'
+import Footer from './Ui/Footer';
 
 
 function App() {
