@@ -15,14 +15,14 @@ function App() {
       <BrowserRouter>
       <Paper>
         <Header />
-      </Paper>
+      
         <Switch>
           <Route exact path="/"> <Landing /> </Route>
           <Route exact path="/curriculum"><Curriculum /></Route>
           <Route exact path="/projects" component={()=> <div>Projects</div>}/>
           <Route exact path="/contact" component={()=> <div>contact</div>}/>
         </Switch>
-        <Paper>
+        
         <Footer />
         </Paper>
       </BrowserRouter>
