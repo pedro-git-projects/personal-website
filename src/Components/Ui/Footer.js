@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: theme.palette.common.primary.colorOne,
+    backgroundColor:theme.palette.primary.main,
     width: "100%",
   },  
   link: {

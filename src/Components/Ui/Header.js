@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   drawer: {
-    backgroundColor: theme.palette.common.primary.colorOne,
+    backgroundColor: theme.palette.primary.main,
   },
   drawerItem: {
     ...theme.typography.tab,
@@ -84,6 +84,11 @@ const useStyles = makeStyles((theme) => ({
   appbar:{
       zIndex: theme.zIndex.modal + 1
   },
+  button:{
+    borderRadius:"50px",
+    marginLeft: "50px",
+    marginRight: "25px"
+  }
 
 }));
 
@@ -137,6 +142,7 @@ export default function Header(props) {
           to="/contact"
           label="Contact Me"
         />
+        <Button variant="contained"   className={classes.button} >Toggle Theme</Button>
       </Tabs>
     </React.Fragment>
   );
