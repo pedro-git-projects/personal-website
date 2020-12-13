@@ -16,6 +16,10 @@ import MenuIcon from "@material-ui/icons/Menu";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import Switch from '@material-ui/core/Switch';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -92,7 +96,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function Header(props) {
+export default function Header({darkMode, setDarkmode}) {
   const classes = useStyles();
   const theme = useTheme();
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -142,7 +146,12 @@ export default function Header(props) {
           to="/contact"
           label="Contact Me"
         />
-        <Button variant="contained"   className={classes.button} >Toggle Theme</Button>
+        <FormGroup>
+            <FormControlLabel
+            control={<Switch  checked={darkMode} onChange={()=>setDarkmode(!darkMode)}  />}
+             labelPlacement="top"
+            />          
+          </FormGroup>
       </Tabs>
     </React.Fragment>
   );
