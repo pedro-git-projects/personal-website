@@ -34,7 +34,7 @@ export default function Footer() {
 
   return (
     <footer className={classes.footer}>
-      <Grid container justify="center" className={classes.mainContainer}>
+      <Grid container justify="center" color="default" className={classes.mainContainer}>
         <Grid item className={classes.gridItem}>
           <Grid container direction="row" spacing={2}>
             <Grid item component={Link} to="/" className={classes.link}>

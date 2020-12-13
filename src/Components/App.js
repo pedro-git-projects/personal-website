@@ -2,7 +2,6 @@ import React from "react";
 import { ThemeProvider } from "@material-ui/styles";
 import { BrowserRouter, Route } from "react-router-dom";
 import Header from "./Ui/Header";
-import Footer from './Ui/Footer';
 import Curriculum from './Curriculum';
 import Paper from '@material-ui/core/Paper';
 import {useState} from 'react';
@@ -17,8 +16,8 @@ const [darkMode, setDarkmode] = useState(false);
         type: darkMode ? "dark" : "light",
         primary:{
             main:'#695E93'
-        }
-    }
+        },
+    },   
 })
 
 return (
@@ -30,8 +29,8 @@ return (
            </Route>
           <Route exact path="/curriculum"><Curriculum /></Route>
           <Route exact path="/projects" component={()=> <div>Projects</div>}/>
-          <Route exact path="/contact" component={()=> <div>contact</div>}/>       
-        <Footer />
+          <Route exact path="/contact" component={()=> <div>contact</div>}/> 
+        
         </Paper>
       </BrowserRouter>
     </ThemeProvider>

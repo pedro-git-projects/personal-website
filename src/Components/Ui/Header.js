@@ -3,7 +3,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import { makeStyles } from "@material-ui/styles";
-import Logo from "../../Assets/logo.svg";
+import Logo from "../../Assets/logocolor5.svg";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { Link } from "react-router-dom";
@@ -148,8 +148,8 @@ export default function Header({darkMode, setDarkmode}) {
         />
         <FormGroup>
             <FormControlLabel
-            control={<Switch  checked={darkMode} onChange={()=>setDarkmode(!darkMode)}  />}
-             labelPlacement="top"
+            control={<Switch size="medium" checked={darkMode} onChange={()=>setDarkmode(!darkMode)}  />}
+             labelPlacement="top" 
             />          
           </FormGroup>
       </Tabs>
@@ -223,6 +223,22 @@ export default function Header({darkMode, setDarkmode}) {
           >
             <ListItemText className={classes.drawerItem}>Contact</ListItemText>
           </ListItem>
+          <ListItem
+            onClick={() => {
+              setOpenDrawer(false);
+              setValue(4);
+            }}
+            divider
+            selected={value === 4}
+          >
+            <FormGroup>
+            <FormControlLabel
+            control={<Switch  checked={darkMode} onChange={()=>setDarkmode(!darkMode)}  />}
+             
+            />          
+          </FormGroup>
+            <ListItemText className={classes.drawerItem}>Toggle Theme</ListItemText>
+          </ListItem>
         </List>
       </SwipeableDrawer>
       <IconButton
@@ -238,7 +254,7 @@ export default function Header({darkMode, setDarkmode}) {
   return (
     <React.Fragment>
       <ElevationScroll>
-        <AppBar className={classes.appbar} position="fixed">
+        <AppBar className={classes.appbar} position="fixed" color="default" >
           <Toolbar disableGutters>
             <Button
               component={Link}
