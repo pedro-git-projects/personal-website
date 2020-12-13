@@ -77,13 +77,12 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "transparent",
     },
-  },
-  drawer: {
-    backgroundColor: theme.palette.primary.main,
+  
+  
   },
   drawerItem: {
     ...theme.typography.tab,
-    color: "white",
+    
   },
   appbar:{
       zIndex: theme.zIndex.modal + 1
@@ -148,7 +147,7 @@ export default function Header({darkMode, setDarkmode}) {
         />
         <FormGroup>
             <FormControlLabel
-            control={<Switch size="medium" checked={darkMode} onChange={()=>setDarkmode(!darkMode)}  />}
+            control={<Switch size="medium" color="primary" checked={darkMode} onChange={()=>setDarkmode(!darkMode)}  />}
              labelPlacement="top" 
             />          
           </FormGroup>
@@ -233,7 +232,7 @@ export default function Header({darkMode, setDarkmode}) {
           >
             <FormGroup>
             <FormControlLabel
-            control={<Switch  checked={darkMode} onChange={()=>setDarkmode(!darkMode)}  />}
+            control={<Switch color="primary"  checked={darkMode} onChange={()=>setDarkmode(!darkMode)}  />}
              
             />          
           </FormGroup>
